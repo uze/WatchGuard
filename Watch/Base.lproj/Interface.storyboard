@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="gHN-4n-I9o">
+                            <items>
+                                <group width="1" alignment="left" layout="vertical" id="aPQ-B8-aHz">
+                                    <items>
+                                        <label alignment="left" text="Max Accel:" id="gPd-o3-Slo">
+                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                        </label>
+                                        <label alignment="right" text="---" id="qtS-5b-CqB">
+                                            <fontDescription key="font" type="system" pointSize="32"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" layout="vertical" id="7Ie-jl-ffJ">
+                                    <items>
+                                        <label alignment="left" text="Heart Rate:" id="lZ2-4f-4t1">
+                                            <fontDescription key="font" type="system" pointSize="16"/>
+                                        </label>
+                                        <label alignment="right" text="---" id="odu-El-lYk">
+                                            <fontDescription key="font" type="system" pointSize="32"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="heartRateLabel" destination="odu-El-lYk" id="SOx-gY-nZU"/>
+                        <outlet property="maxLabel" destination="qtS-5b-CqB" id="3Nm-Cu-Yng"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="230" y="68"/>
+        </scene>
+        <!--AccelEmergController-->
+        <scene sceneID="kZ9-Vb-gOm">
+            <objects>
+                <controller identifier="AccelEmergController" id="Kqz-mB-KZo" customClass="AccelEmergInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="IWS-lf-CpF">
+                            <items>
+                                <label alignment="center" text="Acceleration Threshold Exceeded" textAlignment="center" numberOfLines="3" id="A1l-fC-ehc">
+                                    <fontDescription key="font" type="system" pointSize="17"/>
+                                </label>
+                                <separator alignment="left" id="YEk-jh-y5S"/>
+                                <label alignment="center" text="timer" id="eSy-h2-djG">
+                                    <fontDescription key="font" type="system" pointSize="25"/>
+                                </label>
+                                <separator alignment="left" id="7dl-oJ-OlI"/>
+                                <button width="0.80000000000000004" alignment="center" title="Help Me!" id="cD4-lD-ciw">
+                                    <color key="backgroundColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                    <connections>
+                                        <action selector="helpButton" destination="Kqz-mB-KZo" id="C5H-Qw-T6O"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="backgroundGroup" destination="IWS-lf-CpF" id="ids-6y-fOP"/>
+                        <outlet property="timerLabel" destination="eSy-h2-djG" id="3hs-30-RQH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="-48"/>
+        </scene>
+        <!--EmergInfoController-->
+        <scene sceneID="S5y-zq-Sco">
+            <objects>
+                <controller identifier="EmergInfoController" id="oyk-qg-Wb2" customClass="EmergInfoInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="bTl-5O-Z8S">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" image="167" contentMode="scaleAspectFill" id="pB8-zV-H6r"/>
+                            </items>
+                            <color key="backgroundColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="741" y="93"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="248" y="902"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="902"/>
+        </scene>
+        <!--HREmergController-->
+        <scene sceneID="srE-ta-yQK">
+            <objects>
+                <controller identifier="HREmergController" id="4nI-IR-bAM" customClass="HREmergInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="2Iq-2o-DHF">
+                            <items>
+                                <label height="0.40000000000000002" alignment="center" text="Extreme Heart Rate Detected" textAlignment="center" numberOfLines="3" id="111-qf-i4F">
+                                    <fontDescription key="font" type="system" pointSize="18"/>
+                                </label>
+                                <separator alignment="left" id="a7y-7V-CHq"/>
+                                <label alignment="center" text="timer" id="beq-Td-jHe">
+                                    <fontDescription key="font" type="system" pointSize="25"/>
+                                </label>
+                                <separator alignment="left" id="aJd-9g-S3n"/>
+                                <button width="0.80000000000000004" alignment="center" title="Help Me!" id="ao7-G5-KUs">
+                                    <color key="backgroundColor" red="0.12156862745098039" green="0.52941176470588236" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="16"/>
+                                    <connections>
+                                        <action selector="helpButton" destination="4nI-IR-bAM" id="MRv-fc-HJc"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="backgroundGroup" destination="2Iq-2o-DHF" id="K5j-mf-9PN"/>
+                        <outlet property="timerLabel" destination="beq-Td-jHe" id="Tfm-uE-feX"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="506" y="246"/>
+        </scene>
+    </scenes>
+</document>
