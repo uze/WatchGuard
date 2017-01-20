@@ -26,7 +26,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         sendMessage()
     }
     
-    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("iOS - Session Activated")
         sessionStatusLabel.text = "Watch is connected."
@@ -46,8 +45,6 @@ class ViewController: UIViewController, WCSessionDelegate {
             print("Unexpected emergency code")
         }
     }
-    
-    
     
     func sendMessage() {
         session.sendMessage(["userData" : [User.name, User.bloodType]], replyHandler: { (response) -> Void in
@@ -75,9 +72,6 @@ class ViewController: UIViewController, WCSessionDelegate {
     func sessionDidBecomeInactive(_ session: WCSession) {
         print("iOS - Watch Session has become Inactive")
     }
-    
-    
-    
 }
 
 
