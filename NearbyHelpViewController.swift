@@ -65,7 +65,8 @@ class NearbyHelpViewController: UIViewController {
         let SW = CLLocationCoordinate2D(latitude: 32.017898, longitude: -111.371675)
         let bounds = GMSCoordinateBounds(coordinate: NE, coordinate: SW)
         placesClient.autocompleteQuery("hospital", bounds: bounds, filter: filter, callback: {(results, error) -> Void in
-            if let error = error {
+            if let error = error
+            {
                 print("Current Place error: \(error.localizedDescription)")
                 return
             }
