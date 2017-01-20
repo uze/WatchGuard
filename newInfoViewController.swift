@@ -31,5 +31,4 @@ class newInfoViewController: UIViewController {
         bloodTextField.text = User.bloodType
         contactTextField.text = User.emergContact
     }
-    
 }
