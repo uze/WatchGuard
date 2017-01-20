@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
         self.healthStore.handleAuthorizationForExtension(completion: {
             success, error in
-            
         })
     }
 
