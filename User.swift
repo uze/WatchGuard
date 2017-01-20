@@ -14,6 +14,5 @@ class User {
     static var bloodType: String = ""
     static var emergContact: String = ""
     
-    func `init`() {
-    }
+    func `init`(){}
 }

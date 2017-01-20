@@ -16,14 +16,15 @@ class newInfoViewController: UIViewController {
     @IBOutlet weak var bloodTextField: UITextField!
     @IBOutlet weak var contactTextField: UITextField!
     
-    @IBAction func saveInfo(_ sender: Any) {
+    @IBAction func saveInfo(_ sender: Any)
+    {
         User.name = nameTextField.text!
         User.bloodType = bloodTextField.text!
         User.emergContact = contactTextField.text!
         navigationController?.popToRootViewController(animated: true)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         nameTextField.text = User.name

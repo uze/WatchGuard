@@ -56,7 +56,9 @@ class MsgViewController: UIViewController, MFMessageComposeViewControllerDelegat
             controller.messageComposeDelegate = self
             print("ready to present and send")
             self.present(controller, animated: true, completion: { print("completed") })
-        } else {
+        }
+        else
+        {
             print("failed to SMS")
         }
     }
@@ -82,7 +84,9 @@ extension ViewController: CLLocationManagerDelegate {
         if mapView.isHidden {
             mapView.isHidden = false
             mapView.camera = camera
-        } else {
+        }
+        else
+        {
             mapView.animate(to: camera)
         }
         
